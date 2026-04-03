@@ -1,276 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOMINZ MARKT | Elite Digital Real Estate</title>
+    <title>Kramesk Elite Accessories</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --gold: #D4AF37;
-            --gold-hover: #f1c40f;
             --bg-black: #080808;
             --card-bg: #121212;
-            --text-gray: #a0a0a0;
             --white: #ffffff;
             --whatsapp-green: #25D366;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        
-        body { background-color: var(--bg-black); color: var(--white); line-height: 1.6; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-black); color: var(--white); line-height: 1.6; overflow-x: hidden; text-align: right; }
 
         /* Navigation */
         nav {
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(8, 8, 8, 0.95);
-            backdrop-filter: blur(15px);
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 20px 8%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(8, 8, 8, 0.95); backdrop-filter: blur(15px); position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1); flex-direction: row-reverse;
         }
-        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--white); letter-spacing: 2px; text-transform: uppercase; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--white); text-transform: uppercase; }
         .logo span { color: var(--gold); }
-        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
 
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%);
-            padding: 0 20px;
+        /* Hero */
+        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%); padding: 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 10px; }
+        .hero p { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; font-weight: bold; }
+
+        /* Chat Window Styles */
+        .chat-toggle {
+            position: fixed; bottom: 30px; left: 30px; background: var(--gold); color: black; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1001;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); cursor: pointer; transition: 0.4s;
         }
-        .hero p { color: var(--gold); font-weight: 600; letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 20px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5.5rem); margin-bottom: 30px; line-height: 1.1; font-weight: 900; }
         
-        .btn-view {
-            padding: 18px 45px;
-            background: var(--gold);
-            color: black;
-            text-decoration: none;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            transition: 0.4s;
+        .chat-window {
+            position: fixed; bottom: 110px; left: 30px; width: 350px; height: 500px; background: #121212;
+            border: 1px solid var(--gold); border-radius: 15px; display: none; flex-direction: column; z-index: 1002;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9); overflow: hidden;
         }
-        .btn-view:hover { background: var(--white); transform: translateY(-3px); }
 
-        /* Stats Bar */
-        .stats { display: flex; justify-content: space-around; padding: 50px 8%; background: #0c0c0c; border-bottom: 1px solid #1a1a1a; flex-wrap: wrap; gap: 30px; }
-        .stat-box { text-align: center; }
-        .stat-box h3 { font-size: 2.2rem; color: var(--gold); margin-bottom: 5px; font-weight: 800; }
-        .stat-box p { font-size: 0.7rem; text-transform: uppercase; color: var(--text-gray); letter-spacing: 2px; }
-
-        /* Marketplace Grid */
-        .marketplace { padding: 100px 8%; }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin-bottom: 15px; }
-        .section-header .line { width: 80px; height: 3px; background: var(--gold); margin: 0 auto; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .chat-header { background: var(--gold); color: black; padding: 15px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
+        .chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #080808; }
         
-        .card {
-            background: var(--card-bg);
-            padding: 50px 35px;
-            border: 1px solid #1f1f1f;
-            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card:hover { border-color: var(--gold); transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
+        .msg { padding: 10px 15px; border-radius: 12px; max-width: 85%; font-size: 0.95rem; }
+        .msg.bot { background: #1a1a1a; color: var(--white); align-self: flex-start; border-right: 4px solid var(--gold); border-radius: 0 12px 12px 12px; }
+        .msg.user { background: var(--gold); color: black; align-self: flex-end; font-weight: 600; border-radius: 12px 0 12px 12px; }
 
-        .card-tag { font-size: 0.65rem; font-weight: 800; background: rgba(212,175,55,0.1); color: var(--gold); padding: 6px 15px; border-radius: 2px; text-transform: uppercase; margin-bottom: 25px; display: inline-block; width: fit-content; }
-        .domain-name { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; display: block; color: var(--white); letter-spacing: -1px; }
-        .domain-info { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 30px; min-height: 90px; line-height: 1.8; }
-        
-        .price { font-size: 2.6rem; font-weight: 800; margin-bottom: 35px; color: var(--white); border-top: 1px solid #222; padding-top: 25px; }
-        .price span { font-size: 1.1rem; color: var(--gold); vertical-align: top; margin-right: 4px; }
+        .chat-input-area { padding: 15px; background: #121212; border-top: 1px solid #222; display: flex; gap: 10px; }
+        .chat-input-area input { flex: 1; background: #1a1a1a; border: 1px solid #333; color: white; padding: 12px; border-radius: 8px; outline: none; text-align: right; }
+        .chat-input-area button { background: var(--gold); border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; }
 
-        .btn-action {
-            display: block; width: 100%; padding: 18px; text-align: center; text-decoration: none; font-weight: 800; font-size: 0.85rem;
-            text-transform: uppercase; letter-spacing: 2px; transition: 0.4s;
-        }
-        .btn-gold { background: var(--gold); color: #000; }
-        .btn-gold:hover { background: var(--white); }
-        .btn-outline { border: 1px solid var(--gold); color: var(--gold); }
-        .btn-outline:hover { background: var(--gold); color: #000; }
-
-        /* Why Invest Section */
-        .why-invest { padding: 100px 8%; background: #0a0a0a; border-top: 1px solid #111; }
-        .why-container { display: flex; align-items: center; gap: 80px; flex-wrap: wrap; }
-        .why-text { flex: 1; min-width: 300px; }
-        .why-text h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 40px; }
-        .feature { margin-bottom: 35px; display: flex; gap: 25px; }
-        .feature i { font-size: 1.8rem; color: var(--gold); margin-top: 5px; }
-        .feature h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--white); }
-        .feature p { color: var(--text-gray); font-size: 0.95rem; }
-
-        /* Trust & Security */
-        .security { padding: 80px 8%; text-align: center; background: var(--bg-black); }
-        .security h3 { font-size: 1.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
-        .trust-icons { display: flex; justify-content: center; gap: 60px; opacity: 0.4; flex-wrap: wrap; }
-        .trust-icons i { font-size: 3rem; }
-
-        /* WhatsApp Floating */
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp-green); color: white; width: 65px; height: 65px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 1001;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); text-decoration: none; transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); text-decoration: none;
         }
-        .whatsapp-float:hover { transform: scale(1.15) rotate(15deg); }
 
-        /* Footer */
-        footer { padding: 80px 8%; background: #050505; text-align: center; border-top: 1px solid #111; }
-        .f-logo { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold); margin-bottom: 25px; font-weight: 900; }
-        .f-copy { color: #555; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3.2rem; }
-            .grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            .why-container { text-align: center; }
-            .feature { flex-direction: column; align-items: center; }
-        }
+        @media (max-width: 480px) { .chat-window { width: calc(100% - 40px); left: 20px; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">DOMINZ<span> MARKT</span></div>
-        <div class="nav-links">
-            <a href="#marketplace">Portfolio</a>
-            <a href="#why">Investment</a>
-            <a href="https://wa.me/218917021437">Contact Broker</a>
-        </div>
+        <div class="logo">KRAMESK<span> STORE</span></div>
     </nav>
 
     <section class="hero">
-        <p>Premium Digital Assets</p>
-        <h1>Own The Online<br>Empire</h1>
-        <a href="#marketplace" class="btn-view">Explore Collection</a>
+        <h1>KRAMESK<span> STORE</span></h1>
+        <p>عالم الإكسسوارات النادرة</p>
     </section>
 
-    <div class="stats">
-        <div class="stat-box"><h3>$135k+</h3><p>Market Value</p></div>
-        <div class="stat-box"><h3>2026</h3><p>Portfolio Release</p></div>
-        <div class="stat-box"><h3>Secure</h3><p>Escrow Verified</p></div>
+    <div class="chat-toggle" onclick="toggleChat()">
+        <i class="fas fa-comment-alt"></i>
     </div>
 
-    <section class="marketplace" id="marketplace">
-        <div class="section-header">
-            <h2>The Elite Collection</h2>
-            <div class="line"></div>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <i class="fas fa-times" style="cursor:pointer" onclick="toggleChat()"></i>
+            <span>مساعد كراميسك</span>
         </div>
-
-        <div class="grid">
-            
-            <div class="card">
-                <div>
-                    <div class="card-tag">Global Energy Standard</div>
-                    <span class="domain-name">VLSFO.COM</span>
-                    <p class="domain-info">The definitive digital address for "Very Low Sulphur Fuel Oil". A category-defining asset for the multibillion-dollar marine energy sector. <strong>IMO 2020 Compliant Keyword.</strong></p>
-                </div>
-                <div>
-                    <div class="price"><span>$</span>78,900</div>
-                    <a href="https://wa.me/218917021437?text=Hello,%20I%20am%20interested%20in%20acquiring%20the%20premium%20domain:%20VLSFO.COM" class="btn-action btn-gold">Acquire Asset</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="card-tag">Web3 Logistics</div>
-                    <span class="domain-name">VLSFO.XYZ</span>
-                    <p class="domain-info">Engineered for decentralized maritime protocols. Ideal for blockchain-based fuel tracking, carbon monitoring, and smart-contract supply chain management.</p>
-                </div>
-                <div>
-                    <div class="price"><span>$</span>45,000</div>
-                    <a href="https://wa.me/218917021437?text=Hello,%20I%20would%20like%20to%20make%20an%20offer%20for:%20VLSFO.XYZ" class="btn-action btn-outline">Make Offer</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="card-tag">Fintech AI</div>
-                    <span class="domain-name">USDBOT.AI</span>
-                    <p class="domain-info">High-authority AI domain for automated finance. The premier address for USD-pegged liquidity engines and neural network fintech trading bots.</p>
-                </div>
-                <div>
-                    <div class="price"><span>$</span>9,800</div>
-                    <a href="https://wa.me/218917021437?text=Hello,%20I%20am%20interested%20in%20buying:%20USDBOT.AI" class="btn-action btn-outline">Make Offer</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="card-tag">Education Tech</div>
-                    <span class="domain-name">TECHLLMS.XYZ</span>
-                    <p class="domain-info">Strategically designed for technical Large Language Models (LLMs). The perfect infrastructure for the AI-assisted technical education era.</p>
-                </div>
-                <div>
-                    <div class="price"><span>$</span>1,400</div>
-                    <a href="https://wa.me/218917021437?text=Hello,%20I%20want%20to%20discuss%20the%20price%20of:%20TECHLLMS.XYZ" class="btn-action btn-outline">Make Offer</a>
-                </div>
-            </div>
-
+        <div class="chat-messages" id="chatMessages">
+            <div class="msg bot">أهلاً بك في كراميسك! ✨ كيف يمكنني مساعدتك اليوم؟</div>
         </div>
-    </section>
-
-    <section class="why-invest" id="why">
-        <div class="why-container">
-            <div class="why-text">
-                <h2>The Power of <span style="color: var(--gold);">Strategic Assets</span></h2>
-                <div class="feature">
-                    <i class="fas fa-gem"></i>
-                    <div>
-                        <h4>Digital Scarcity</h4>
-                        <p>A premium domain is a one-of-a-kind asset. Once acquired, you own the exclusive gateway to that specific industry keyword.</p>
-                    </div>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-bolt"></i>
-                    <div>
-                        <h4>Instant Authority</h4>
-                        <p>Skip years of SEO. A top-tier domain like VLSFO.COM grants immediate trust and global market leadership from day one.</p>
-                    </div>
-                </div>
-            </div>
-            <div style="flex: 1; text-align: center;">
-                <i class="fas fa-crown" style="font-size: 12rem; color: #111;"></i>
-            </div>
+        <div class="chat-input-area">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            <input type="text" id="userInput" placeholder="اسأل عن المنتجات والأسعار..." onkeypress="if(event.key==='Enter') sendMessage()">
         </div>
-    </section>
-
-    <section class="security">
-        <h3>Safe & Secure Transfer</h3>
-        <div class="trust-icons">
-            <i class="fab fa-bitcoin" title="Bitcoin Accepted"></i>
-            <i class="fas fa-shield-check" title="Escrow Protected"></i>
-            <i class="fas fa-university" title="Bank Wire"></i>
-            <i class="fab fa-ethereum" title="Ethereum Accepted"></i>
-        </div>
-    </section>
+    </div>
 
     <a href="https://wa.me/218917021437" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer>
-        <div class="f-logo">DOMINZ MARKT</div>
-        <p class="f-copy">© 2026 DOMINZ MARKT GLOBAL. ALL RIGHTS RESERVED.</p>
-        <p class="f-copy" style="margin-top: 15px; color: var(--gold); font-size: 0.7rem;">AN AFFILIATE OF USDBOT.AI ECOSYSTEM</p>
-    </footer>
+    <script>
+        const API_KEY = "Gsk_Dce8jFGRuXd3neJdvU6jWGdyb3FYNbQnU41r6OQZpXOowE3lRXS3";
 
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const userText = input.value.trim();
+            if (!userText) return;
+
+            addMessage(userText, 'user');
+            input.value = '';
+
+            const systemPrompt = `
+                اسم المتجر: كراميسك (Kramesk).
+                تواصل فقط عبر واتساب: 0917021437.
+                تجاهل أي أسماء أو أرقام تظهر في الصور السابقة، والتزم بالبيانات التالية:
+                
+                المنتجات والأسعار الحالية:
+                - طقم ياقوت ملكي (أحمر): 550 د.ل.
+                - طقم زمرد كلاسيك (أخضر): 520 د.ل.
+                - قلادة سافاير فخمة (أزرق): 480 د.ل.
+                - ساعة يد ذهبية أنيقة: 450 د.ل.
+                - مجموعة ساعات مرصعة: 380 د.ل.
+                - أقراط ناعمة: 290 د.ل.
+                - سوار بسيط: 200 د.ل.
+
+                العروض: 15% خصم لأول طلب + شحن مجاني عند طلب قطعتين أو أكثر.
+                الاسترجاع: 3 أيام.
+                الرد بلهجة ليبية مهذبة أو لغة عربية فخمة، وبشكل مختصر جداً.
+            `;
+
+            try {
+                const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${API_KEY}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        model: "llama-3.1-8b-instant",
+                        messages: [
+                            { role: "system", content: systemPrompt },
+                            { role: "user", content: userText }
+                        ],
+                        temperature: 0.5
+                    })
+                });
+
+                const data = await response.json();
+                addMessage(data.choices[0].message.content, 'bot');
+            } catch (err) {
+                addMessage("الرجاء مراسلتنا واتساب مباشرة للرد السريع.", 'bot');
+            }
+        }
+
+        function addMessage(text, side) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `msg ${side}`;
+            div.innerText = text;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+    </script>
 </body>
 </html>

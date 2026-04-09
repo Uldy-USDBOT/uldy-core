@@ -108,7 +108,7 @@
         /* القسم الرئيسي (Hero Section) */
         .hero {
             text-align: center;
-            padding: 100px 0 60px;
+            padding: 80px 0 60px;
         }
 
         .hero h1 {
@@ -125,47 +125,23 @@
             margin: 0 auto 40px;
         }
 
-        /* شريط البحث عن الدومين */
-        .domain-search {
-            display: flex;
-            max-width: 700px;
-            margin: 0 auto 80px;
-            background: rgba(0,0,0,0.5);
+        /* تنسيق الصورة الجديدة في الهيدر */
+        .hero-image {
+            max-width: 100%;
+            width: 800px; /* للتحكم في أقصى عرض للصورة */
+            height: auto;
+            border-radius: 24px;
+            margin: 0 auto 60px;
+            display: block;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
             border: 1px solid var(--border-color);
-            border-radius: 50px;
-            padding: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .domain-search input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            color: white;
-            padding: 15px 25px;
-            font-size: 1.1rem;
-            outline: none;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        .domain-search input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .domain-search button {
-            background: var(--primary);
-            color: var(--bg-color);
-            border: none;
-            padding: 15px 40px;
-            border-radius: 40px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .domain-search button:active {
-            transform: scale(0.95);
+        .hero-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 225, 217, 0.15);
+            border-color: rgba(0, 225, 217, 0.3);
         }
 
         /* المميزات (Features) */
@@ -291,10 +267,8 @@
         /* التجاوب مع الشاشات الصغيرة */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            .domain-search { flex-direction: column; border-radius: 20px; background: transparent; box-shadow: none; border: none; gap: 10px; }
-            .domain-search input, .domain-search button { border-radius: 15px; width: 100%; }
-            .domain-search input { background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); }
             .pricing-badge { right: -45px; }
+            .hero-image { width: 100%; border-radius: 16px; margin-bottom: 40px; }
         }
     </style>
 </head>
@@ -310,10 +284,7 @@
             <h1>انطلق بموقعك مع استضافة <br><span class="gradient-text">عالمية السرعة</span></h1>
             <p>نوفر لكم دومينات .com مع حماية متقدمة، استضافة فائقة السرعة، وأدوات احترافية لبناء صفحات الهبوط بكل سهولة.</p>
 
-            <div class="domain-search">
-                <input type="text" placeholder="ابحث عن اسم نطاقك الجديد (مثال: mydomain.com)..." id="domainInput">
-                <button onclick="searchDomain()">ابحث الآن</button>
-            </div>
+            <img src="tech-1.jpg" alt="خدمات استضافة الويب الاحترافية" class="hero-image">
         </section>
 
         <section class="features">
@@ -354,7 +325,7 @@
                     <li><i class="fa-solid fa-check"></i> دعم فني متواصل</li>
                 </ul>
 
-                <a href="https://wa.me/218917021437text=مرحباً، أريد الاشتراك في عرض الاستضافة والدومين بسعر 1500 دينار." target="_blank" class="whatsapp-btn">
+                <a href="https://wa.me/218917021437?text=مرحباً، أريد الاشتراك في عرض الاستضافة والدومين بسعر 1500 دينار." target="_blank" class="whatsapp-btn">
                     <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة عبر واتساب
                 </a>
             </div>
@@ -365,27 +336,5 @@
         </footer>
     </div>
 
-    <script>
-        function searchDomain() {
-            const btn = document.querySelector('.domain-search button');
-            const input = document.getElementById('domainInput').value;
-            
-            if(input.trim() === '') {
-                alert('يرجى إدخال اسم الدومين أولاً');
-                return;
-            }
-
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> جاري البحث...';
-            btn.style.opacity = '0.8';
-            
-            // محاكاة عملية بحث وهمية لمدة ثانيتين
-            setTimeout(() => {
-                alert('ممتاز! هذا الدومين متاح للحجز. تواصل معنا لإتمام الطلب.');
-                btn.innerHTML = originalText;
-                btn.style.opacity = '1';
-            }, 2000);
-        }
-    </script>
 </body>
 </html>

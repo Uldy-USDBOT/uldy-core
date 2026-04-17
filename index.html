@@ -139,22 +139,22 @@
                 <h3 style="margin-bottom: 30px; font-size: 1.8rem; color: white;">بوابة السيولة الفورية (OTC)</h3>
                 
                 <div class="input-group">
-                    <label>المبلغ المدفوع (دينار ليبي)</label>
+                    <label>الكمية المستلمة (USDT)</label>
                     <div class="input-wrapper">
-                        <input type="number" id="fiatAmount" value="1500" oninput="calculateCrypto()">
-                        <div class="currency-badge">LYD</div>
+                        <input type="number" id="cryptoAmount" placeholder="ادخل كمية الـ USDT هنا" oninput="calculateFiat()">
+                        <div class="currency-badge">USDT <span style="font-size:0.7rem; margin-right:5px; color:#888;">(TRC20)</span></div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin: 20px 0; color: var(--text-muted);">
-                    <i class="fa-solid fa-arrow-down-up-lock"></i> سعر الصرف المعتمد: 1 USDT = <span id="exchangeRate">7.15</span> LYD
+                    <i class="fa-solid fa-arrow-down-up-lock"></i> سعر الصرف المعتمد: 1 USDT = <span id="exchangeRate">7.90</span> LYD
                 </div>
 
                 <div class="input-group">
-                    <label>المبلغ المستلم (USDT)</label>
+                    <label>المبلغ المدفوع المقابل (دينار ليبي)</label>
                     <div class="input-wrapper">
-                        <input type="number" id="cryptoAmount" readonly>
-                        <div class="currency-badge">USDT <span style="font-size:0.7rem; margin-right:5px; color:#888;">(TRC20)</span></div>
+                        <input type="number" id="fiatAmount" readonly>
+                        <div class="currency-badge">LYD</div>
                     </div>
                 </div>
 
@@ -192,18 +192,19 @@
     </div>
 
     <script>
-        // إعدادات المتغيرات
-        const currentRate = 7.15; // السعر الثابت
-        const whatsappNumber = "218917021437"; // رقم هاتف المؤسسة
+        // تم تحديث السعر هنا إلى 7.90
+        const currentRate = 7.90; 
+        const whatsappNumber = "218917021437"; 
 
-        // دالة حاسبة التداول
-        function calculateCrypto() {
-            const fiat = document.getElementById('fiatAmount').value;
-            if(fiat > 0) {
-                const crypto = (fiat / currentRate).toFixed(2);
-                document.getElementById('cryptoAmount').value = crypto;
+        // دالة حاسبة التداول المحدثة لتعمل بالمنطق الجديد (من USDT إلى LYD)
+        function calculateFiat() {
+            const crypto = document.getElementById('cryptoAmount').value;
+            if(crypto > 0) {
+                // نقوم بضرب كمية الـ USDT في سعر الصرف للحصول على المبلغ بالدينار
+                const fiat = (crypto * currentRate).toFixed(2);
+                document.getElementById('fiatAmount').value = fiat;
             } else {
-                document.getElementById('cryptoAmount').value = 0;
+                document.getElementById('fiatAmount').value = 0;
             }
         }
 
@@ -215,23 +216,23 @@
             });
         }
 
-        // دالة إرسال الطلب عبر واتساب
+        // دالة إرسال الطلب عبر واتساب المحدثة
         function sendOrder() {
             const fiat = document.getElementById('fiatAmount').value;
             const crypto = document.getElementById('cryptoAmount').value;
             
-            if(fiat <= 0) {
-                alert("يرجى إدخال مبلغ صحيح");
+            if(crypto <= 0) {
+                alert("يرجى إدخال كمية صحيحة من الـ USDT");
                 return;
             }
 
-            const message = `مرحباً مؤسسة TechLLMs،\nأرغب في فتح طلب تسوية/شراء أصول رقمية:\n- المبلغ المدفوع: ${fiat} دينار\n- القيمة المستلمة: ${crypto} USDT\n\nيرجى تأكيد الطلب لإتمام عملية التحويل.`;
+            // تم تعديل الرسالة لتعكس المنطق الجديد للطلب
+            const message = `مرحباً مؤسسة TechLLMs،\nأرغب في فتح طلب تسوية/شراء أصول رقمية:\n- الكمية المستلمة: ${crypto} USDT\n- المبلغ المدفوع المقابل: ${fiat} دينار\n\nيرجى تأكيد الطلب لإتمام عملية التحويل.`;
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
         }
 
-        // تشغيل الحساب التلقائي عند فتح الصفحة
-        window.onload = calculateCrypto;
+        // لم نعد بحاجة لتشغيل الحساب عند التحميل لأن الحقول أصبحت فارغة
     </script>
 </body>
 </html>

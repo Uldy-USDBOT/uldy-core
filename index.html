@@ -274,7 +274,7 @@
             font-size: 0.88rem;
         }
 
-        /* Contact CTA في الوسط */
+        /* Contact CTA وسط الصفحة */
         .contact {
             text-align: center;
             background: linear-gradient(150deg, #1e3a8a, #0f172a);
@@ -336,8 +336,7 @@
             font-weight: 700;
         }
 
-        .info-block p,
-        .info-block ul {
+        .info-block p {
             color: #475569;
             font-size: 0.9rem;
             line-height: 1.9;
@@ -345,46 +344,75 @@
             margin-bottom: 15px;
         }
 
-        .info-block ul {
+        /* تنسيق خاص لقسم اتصل بنا ليبدو بشكل بطاقة تواصل جذابة */
+        .contact-info-list {
             list-style: none;
-            padding-right: 0;
+            padding: 0;
+            margin: 10px 0 15px;
         }
 
-        .info-block ul li {
-            margin-bottom: 10px;
+        .contact-info-list li {
             display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
-
-        .info-block ul li::before {
-            content: "✅";
-            font-size: 0.9rem;
-        }
-
-        /* صندوق الإيميل */
-        .email-box {
-            display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: #f1f5f9;
-            padding: 12px 18px;
-            border-radius: 50px;
-            margin: 10px 0;
-            direction: ltr;
+            gap: 12px;
+            margin-bottom: 12px;
             font-size: 0.95rem;
-            font-weight: 500;
-            color: #1e293b;
-            text-decoration: none;
+            background: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 16px;
             transition: background 0.3s;
         }
 
-        .email-box:hover {
-            background: #e2e8f0;
+        .contact-info-list li:hover {
+            background: #eef2ff;
         }
 
-        .email-icon {
+        .contact-icon {
             font-size: 1.3rem;
+            width: 36px;
+            height: 36px;
+            background: #e0e7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a8a;
+            flex-shrink: 0;
+        }
+
+        .contact-info-list a {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .contact-info-list .whatsapp-link {
+            color: #25D366;
+            font-weight: 600;
+        }
+
+        .contact-whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 14px 10px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 10px;
+            box-shadow: 0 8px 18px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s;
+        }
+
+        .contact-whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(18, 140, 126, 0.4);
         }
 
         /* Floating WhatsApp */
@@ -561,35 +589,41 @@
         <!-- الأقسام الثلاثة الجديدة أسفل الموقع -->
         <div class="bottom-sections">
             <!-- من نحن -->
-            <div class="info-block" id="about">
+            <div class="info-block">
                 <h2>📌 من نحن</h2>
                 <p>فريق <strong>techllms.xyz</strong> متخصص في خدمات الويب المتكاملة داخل ليبيا. هدفنا تمكين الأفراد والشركات الصغيرة من التواجد الرقمي القوي بأقل التكاليف. نؤمن بأن الاحترافية والجودة العالية يجب أن تكون في متناول الجميع، لذلك نقدم استضافة مجانية، نطاقات مميزة، ومواقع جاهزة بتصاميم عصرية ومرونة كاملة.</p>
                 <p>نفخر بخدمة عملاء من مختلف المدن الليبية، ونسعى دائماً لكسب ثقتكم من خلال الدعم الفوري والصادق.</p>
             </div>
 
             <!-- سياساتنا -->
-            <div class="info-block" id="privacy">
+            <div class="info-block">
                 <h2>🔒 سياساتنا</h2>
                 <p><strong>سياسة الخصوصية:</strong> نحن نلتزم بحماية بيانات عملائنا ولا نشاركها مع أي طرف ثالث. المعلومات التي يتم جمعها تستخدم فقط لتقديم خدماتنا وتحسين تجربتك.</p>
                 <p><strong>سياسة الاستخدام:</strong> نحرص على توفير بيئة آمنة ومستقرة. يُمنع استخدام خدماتنا لأي أنشطة غير قانونية أو مضرة. نحتفظ بالحق في تعليق أي خدمة تثبت مخالفتها للشروط.</p>
                 <p><strong>الإلغاء والاسترداد:</strong> يمكنك إلغاء الخدمات المدفوعة خلال 7 أيام لاسترداد كامل المبلغ. الخدمات المجانية تبقى مجانية دون أي التزام.</p>
             </div>
 
-            <!-- اتصل بنا -->
-            <div class="info-block" id="contact-us">
+            <!-- اتصل بنا (المظهر المحسّن) -->
+            <div class="info-block">
                 <h2>📞 اتصل بنا</h2>
-                <p>نحن هنا للإجابة عن استفساراتكم ومساعدتكم في اختيار الخدمة الأنسب. يمكنكم التواصل معنا عبر إحدى الطرق التالية:</p>
-                <ul>
-                    <li><strong>📱 واتساب:</strong> <a href="https://wa.me/218917021437" target="_blank" rel="noopener noreferrer">+218 91-7021437</a></li>
+                <p style="margin-bottom: 5px;">نحن هنا للإجابة عن استفساراتكم ومساعدتكم في اختيار الخدمة الأنسب. يمكنكم التواصل معنا عبر:</p>
+                <ul class="contact-info-list">
                     <li>
-                        <strong>📧 البريد الإلكتروني:</strong>
-                        <a href="mailto:nosa6512@gmail.com" class="email-box">
-                            <span class="email-icon">✉️</span> nosa6512@gmail.com
-                        </a>
+                        <span class="contact-icon">📱</span>
+                        <span>واتساب: <a href="https://wa.me/218917021437" class="whatsapp-link" target="_blank" rel="noopener noreferrer">+218 91-7021437</a></span>
                     </li>
-                    <li><strong>🌐 الموقع:</strong> techllms.xyz</li>
+                    <li>
+                        <span class="contact-icon">✉️</span>
+                        <span>البريد الإلكتروني: <a href="mailto:nosa6512@gmail.com">nosa6512@gmail.com</a></span>
+                    </li>
+                    <li>
+                        <span class="contact-icon">🌐</span>
+                        <span>الموقع: <a href="https://techllms.xyz" target="_blank">techllms.xyz</a></span>
+                    </li>
                 </ul>
-                <a href="https://wa.me/218917021437" class="whatsapp-btn" style="display:inline-flex; align-items:center; gap:6px; margin-top:10px;" target="_blank" rel="noopener noreferrer">💬 تواصل فوري</a>
+                <a href="https://wa.me/218917021437" class="contact-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                    💬 تواصل فوري عبر الواتساب
+                </a>
             </div>
         </div>
     </div>

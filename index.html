@@ -2,678 +2,401 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="مؤسسة TechLLMs للحلول المالية الذكية وتقنيات Web3. نوفر خدمات شراء USDT الآمنة وتسويات التجارة الدولية العابرة للحدود في ليبيا.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
-    <title>TechLLMs | منصة تبادل USDT والتسويات المالية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>techllms.xyz - استضافة مجانية، دومين مميز، وموقع جاهز متكامل بأقل تكلفة</title>
+    <meta name="description" content="Techllms تقدم خدمات ويب متكاملة في ليبيا: استضافة مواقع مجانية، نطاقات مميزة .com و .xyz، تصميم مواقع جاهزة بتكلفة منخفضة جدًا. اطلب الآن عبر واتساب +218917021437.">
+    <meta name="keywords" content="استضافة مجانية, دومين نطاق مميز, موقع جاهز متكامل, تكلفة منخفضة, استضافة ليبيا, techllms, techllms.xyz, تصميم مواقع ليبيا, شركة استضافة, نطاق .xyz, خدمات ويب, مواقع جاهزة للبيع, احصل على استضافة مجانية, احصل على دومين, موقع الكتروني رخيص, ليبيا">
+    <meta name="author" content="techllms.xyz">
+    <meta name="robots" content="index, follow">
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techllms.xyz/">
+    <meta property="og:title" content="techllms.xyz - استضافة مجانية، دومين مميز، وموقع جاهز متكامل بأقل تكلفة">
+    <meta property="og:description" content="احصل على استضافة مجانية، نطاق مميز، وموقع إلكتروني جاهز بتكلفة منخفضة جدًا في ليبيا. تواصل معنا عبر واتساب +218917021437.">
+    <meta property="og:image" content="https://techllms.xyz/tsch-1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://techllms.xyz/">
+    <meta property="twitter:title" content="techllms.xyz - استضافة مجانية، دومين مميز، وموقع جاهز متكامل بأقل تكلفة">
+    <meta property="twitter:description" content="احصل على استضافة مجانية، نطاق مميز، وموقع إلكتروني جاهز بتكلفة منخفضة جدًا في ليبيا. تواصل معنا عبر واتساب +218917021437.">
+    <meta property="twitter:image" content="https://techllms.xyz/tsch-1.jpg">
+    
+    <!-- Favicon (emoji placeholder) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --bg-dark: #020617;
-            --bg-panel: #0f172a;
-            --primary: #00E1D9;
-            --accent: #F59E0B;
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --border: rgba(255, 255, 255, 0.08);
-            --success: #10B981;
-            --warning: #F59E0B;
-            --danger: #EF4444;
-            --radius-lg: 28px;
-            --radius-md: 20px;
-            --radius-sm: 12px;
-            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Tajawal', sans-serif;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            background-color: #f9fafb;
+            color: #1f2937;
+            scroll-behavior: smooth;
         }
-
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 20px;
         }
-
-        /* Header Styles */
-        .header {
-            background: rgba(2, 6, 23, 0.95);
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 900;
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
             color: white;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: -0.5px;
-        }
-
-        .logo i {
-            color: var(--primary);
-            font-size: 28px;
-        }
-
-        .badge {
-            background: rgba(0, 225, 217, 0.1);
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            color: var(--primary);
-            border: 1px solid rgba(0, 225, 217, 0.3);
-            backdrop-filter: blur(4px);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 60px;
+            padding: 20px 0;
             text-align: center;
-            background: radial-gradient(circle at 50% -30%, rgba(0, 225, 217, 0.15), transparent 70%);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.2;
+        header .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            word-break: break-word;
         }
-
-        .hero h1 span {
-            color: var(--primary);
-            text-shadow: 0 0 12px rgba(0, 225, 217, 0.3);
-        }
-
-        .hero p {
-            color: var(--text-muted);
+        header .tagline {
             font-size: 1.2rem;
-            max-width: 750px;
-            margin: 0 auto;
+            opacity: 0.9;
+            margin-top: 5px;
         }
-
-        /* Exchange Grid */
-        .exchange-section {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin: 60px 0;
-            align-items: start;
+        /* Hero */
+        .hero {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%231e3a8a" fill-opacity="0.1" d="M0,96L48,117.3C96,139,192,181,288,181.3C384,181,480,139,576,122.7C672,107,768,117,864,144C960,171,1056,213,1152,213.3C1248,213,1344,171,1392,149.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat bottom center;
+            background-size: cover;
+            padding: 60px 20px;
+            text-align: center;
         }
-
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            border: 1px solid var(--border);
-            transition: var(--transition);
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #0f172a;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
         }
-
-        .glass-panel:hover {
-            border-color: rgba(0, 225, 217, 0.3);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
+        .hero p {
+            font-size: 1.3rem;
+            color: #334155;
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
-
-        .panel-title {
-            font-size: 1.6rem;
-            margin-bottom: 28px;
-            color: var(--primary);
-            border-right: 4px solid var(--accent);
-            padding-right: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Form Elements */
-        .input-group {
-            margin-bottom: 24px;
-        }
-
-        .input-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .input-wrapper {
-            display: flex;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: var(--radius-sm);
-            padding: 4px 16px 4px 8px;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-        }
-
-        .input-wrapper:focus-within {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 225, 217, 0.2);
-        }
-
-        .input-wrapper input {
-            background: transparent;
-            border: none;
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
             color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-            width: 100%;
-            outline: none;
-            padding: 14px 0;
-            font-family: monospace;
-        }
-
-        .input-wrapper input[readonly] {
-            color: var(--text-muted);
-            cursor: default;
-        }
-
-        .currency-label {
-            color: var(--primary);
-            font-weight: 700;
-            min-width: 65px;
-            text-align: left;
-            font-size: 1rem;
-        }
-
-        .rate-box {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 0.9rem;
-            background: rgba(0, 225, 217, 0.07);
-            padding: 12px;
-            border-radius: var(--radius-sm);
-            color: var(--text-muted);
-        }
-
-        /* Buttons */
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 16px 20px;
-            border-radius: var(--radius-sm);
-            border: none;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
+            padding: 15px 35px;
+            border-radius: 50px;
             text-decoration: none;
-            font-family: inherit;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
         }
-
-        .btn-primary {
-            background: var(--primary);
-            color: #000;
-            box-shadow: 0 4px 12px rgba(0, 225, 217, 0.3);
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(18, 140, 126, 0.4);
         }
-
-        .btn-whatsapp {
+        /* Services Cards */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            flex: 1 1 300px;
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 3px solid #1e3a8a;
+        }
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-content h3 {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .card-content p {
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.9;
+            text-align: justify;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .card-content .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #1e40af;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+        /* FAQ Section */
+        .faq {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .faq h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #0f172a;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .faq h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
             background: #25D366;
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+        }
+        .faq-item h4 {
+            font-size: 1.2rem;
+            color: #1e3a8a;
+            cursor: default;
+            margin-bottom: 5px;
+        }
+        .faq-item p {
+            color: #475569;
+            padding-right: 15px;
+            line-height: 1.9;
+        }
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
             color: white;
-            margin-top: 10px;
+            padding: 50px 20px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .contact .phone {
+            font-size: 2rem;
+            font-weight: bold;
+            direction: ltr;
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin: 20px 0;
+            letter-spacing: 2px;
+        }
+        .contact .note {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-        }
-
-        .btn-whatsapp i {
-            font-size: 1.2rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.05);
-        }
-
-        .btn:active {
-            transform: translateY(1px);
-        }
-
-        /* Security Panel */
-        .security-panel {
-            text-align: center;
-        }
-
-        .qr-img {
-            width: 160px;
-            height: auto;
-            border-radius: 20px;
-            border: 2px solid var(--primary);
-            margin: 20px auto;
-            background: white;
-            padding: 6px;
-        }
-
-        .wallet-box {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 14px 18px;
-            border-radius: var(--radius-sm);
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            word-break: break-all;
-            border: 1px solid var(--border);
-            margin: 16px 0;
-        }
-
-        .copy-icon {
-            cursor: pointer;
-            color: var(--accent);
-            font-size: 1.2rem;
-            transition: var(--transition);
-            flex-shrink: 0;
-        }
-
-        .copy-icon:hover {
-            color: var(--primary);
-            transform: scale(1.05);
-        }
-
-        .toast-msg {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1e293b;
-            color: white;
-            padding: 10px 24px;
-            border-radius: 40px;
-            font-size: 0.85rem;
+            font-size: 32px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            text-decoration: none;
             z-index: 1000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            border-right: 4px solid var(--success);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.2s;
+            transition: transform 0.3s;
         }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 28px;
-            margin: 50px 0 30px;
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
         }
-
-        .service-card {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(8px);
-            padding: 30px 20px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 18px;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-        }
-
         /* Footer */
         footer {
-            padding: 48px 0 32px;
             text-align: center;
-            border-top: 1px solid var(--border);
-            margin-top: 70px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            padding: 30px 20px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+            font-size: 0.95rem;
         }
-
+        footer a {
+            color: #1e3a8a;
+            text-decoration: none;
+        }
         /* Responsive */
-        @media (max-width: 850px) {
-            .exchange-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
+        @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
-            .container {
-                padding: 0 20px;
+            .hero p {
+                font-size: 1.1rem;
             }
-            .glass-panel {
-                padding: 24px;
-            }
-            .input-wrapper input {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .wallet-box {
+            .services {
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
             }
-            .badge {
-                font-size: 0.7rem;
+            .card {
+                max-width: 100%;
             }
-        }
-
-        /* Hide number spinners */
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
         }
     </style>
+    
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "techllms.xyz",
+        "url": "https://techllms.xyz",
+        "logo": "https://techllms.xyz/tsch-1.jpg",
+        "description": "خدمات استضافة مجانية، دومين نطاق مميز، ومواقع جاهزة متكاملة بأقل تكلفة في ليبيا.",
+        "telephone": "+218917021437",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "ليبيا"
+        },
+        "sameAs": [
+            "https://wa.me/218917021437"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+218917021437",
+            "contactType": "customer service",
+            "availableLanguage": ["Arabic"]
+        }
+    }
+    </script>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="logo">techllms.xyz</div>
+            <div class="tagline">الحل الأمثل لوجودك الرقمي بأقل التكاليف</div>
+        </div>
+    </header>
 
-<div class="header">
-    <div class="container nav-wrapper">
-        <a href="#" class="logo"><i class="fa-solid fa-building-columns"></i> TechLLMs</a>
-        <div class="badge"><i class="fa-solid fa-circle-check"></i> تداول يدوي آمن | TRC20</div>
-    </div>
-</div>
-
-<main class="container">
     <section class="hero">
-        <h1>شراء عملة <span>USDT</span> في ليبيا</h1>
-        <p>مؤسسة TechLLMs توفر لك سيولة فورية مقابل الدينار الليبي عبر تحويلات مصرفية يدوية. نضمن لك الأمان والسرعة والشفافية.</p>
+        <div class="container">
+            <h1>احصل على استضافة مجانية، دومين مميز، وموقع جاهز متكامل</h1>
+            <p>نقدم لك أفضل خدمات الويب في ليبيا: استضافة مواقع مجانية دون أي رسوم خفية، نطاقات <strong>.com</strong> و <strong>.xyz</strong> مميزة، وتصميم مواقع جاهزة احترافية بأقل تكلفة ممكنة. كل ما تحتاجه لإطلاق مشروعك الإلكتروني بسرعة وسهولة.</p>
+            <a href="https://wa.me/218917021437" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">📞 تواصل عبر واتساب الآن</a>
+        </div>
     </section>
 
-    <section class="exchange-section" id="exchange">
-        <div class="glass-panel">
-            <div class="panel-title">
-                <i class="fa-solid fa-calculator"></i>
-                <span>حاسبة الشراء الفورية</span>
-            </div>
-
-            <div class="input-group">
-                <label><i class="fa-solid fa-coins"></i> أنت تستلم (USDT)</label>
-                <div class="input-wrapper">
-                    <input type="number" id="usdtAmount" placeholder="0.00" step="any" value="100">
-                    <span class="currency-label">USDT</span>
+    <div class="container">
+        <div class="services">
+            <!-- Card 1: استضافة مجانية -->
+            <div class="card">
+                <img src="tsch-1.jpg" alt="استضافة مجانية غير محدودة - techllms.xyz" loading="lazy">
+                <div class="card-content">
+                    <h3>احصل على استضافة مجانية</h3>
+                    <p>ابدأ موقعك الإلكتروني دون دفع أي مليم. نوفر لك <strong>استضافة مجانية</strong> تمامًا تتضمن مساحة تخزين سخية، نقل بيانات غير محدود، وشهادة SSL مجانية لتأمين موقعك. مثالية للمبتدئين والمدونات الشخصية والمشاريع الصغيرة. لا رسوم مخفية، ودعم فني سريع على مدار الساعة. ارفع موقعك أونلاين في دقائق مع لوحة تحكم سهلة الاستخدام.</p>
+                    <span class="tag">#استضافة_مجانية</span>
                 </div>
             </div>
-
-            <div class="rate-box" id="rateDisplay">
-                سعر الصرف الحالي: 1 USDT = <strong id="rateValue">7.90</strong> LYD
-            </div>
-
-            <div class="input-group">
-                <label><i class="fa-solid fa-money-bill-wave"></i> المبلغ المطلوب دفعه (LYD)</label>
-                <div class="input-wrapper">
-                    <input type="number" id="lydAmount" placeholder="0.00" step="any">
-                    <span class="currency-label">LYD</span>
+            
+            <!-- Card 2: دومين نطاق مميز -->
+            <div class="card">
+                <img src="tsch-2.jpg" alt="دومين نطاق مميز .com .xyz - techllms.xyz" loading="lazy">
+                <div class="card-content">
+                    <h3>احصل على دومين نطاق مميز</h3>
+                    <p>اختر اسم نطاق يعكس هويتك التجارية ويسهل تذكره. نوفر لك <strong>دومين نطاق مميز</strong> بأسعار تنافسية تشمل الامتدادات الشهيرة مثل <strong>.com</strong> و <strong>.net</strong> و <strong>.org</strong> بالإضافة إلى النطاق العصري <strong>.xyz</strong>. كل نطاق يأتي مع حماية خصوصية مجانية وسهولة في الإعداد. استثمر في عنوان موقعك الإلكتروني الذي يبني ثقة زوارك ويحسن ظهورك في محركات البحث.</p>
+                    <span class="tag">#دومين_مميز</span>
                 </div>
             </div>
-
-            <button class="btn btn-whatsapp" id="requestOrderBtn">
-                <i class="fa-brands fa-whatsapp"></i> طلب الحساب وإتمام الدفع
-            </button>
-            <p style="font-size: 0.7rem; margin-top: 12px; color: var(--text-muted);">
-                <i class="fa-regular fa-clock"></i> سيتم تزويدك برقم حساب سداد فوري عبر الواتساب
-            </p>
-        </div>
-
-        <div class="glass-panel security-panel">
-            <div class="panel-title">
-                <i class="fa-solid fa-shield-virus"></i>
-                <span>بروتوكول الأمان اليدوي</span>
+            
+            <!-- Card 3: موقع جاهز متكامل -->
+            <div class="card">
+                <img src="tsch-3.jpg" alt="موقع جاهز متكامل بتكلفة منخفظة جدا - techllms.xyz" loading="lazy">
+                <div class="card-content">
+                    <h3>احصل على موقع جاهز متكامل بتكلفة منخفضة جدًا</h3>
+                    <p>لا حاجة للبرمجة أو التصميم المكلف. نقدم لك <strong>موقع ويب جاهز متكامل</strong> بأقل الأسعار في السوق الليبي. مواقع احترافية، سريعة الاستجابة، متوافقة مع جميع الأجهزة (كمبيوتر، تابلت، جوال)، ومحسّنة لمحركات البحث (SEO) لتتصدر نتائج البحث. يتضمن الموقع نظام إدارة محتوى سهل، نماذج تواصل، وربط بوسائل التواصل الاجتماعي. مثالي للأنشطة التجارية والمتاجر الإلكترونية والخدمات.</p>
+                    <span class="tag">#موقع_جاهز</span>
+                </div>
             </div>
-            <p style="margin-bottom: 8px;">✅ بعد الدفع، أرسل لقطة الشاشة عبر الواتساب لاستلام USDT فوراً.</p>
-            <img src="12550.jpg" alt="رمز الاستجابة السريعة للدفع - مسح ضوئي للتحويل" class="qr-img" loading="lazy">
-            <div class="wallet-box">
-                <span id="walletAddress">TSvW4XVmvY8cyvZdu3yFcbZyMsMW3dYYu8</span>
-                <i class="fa-regular fa-copy copy-icon" id="copyWalletBtn" role="button" aria-label="نسخ عنوان المحفظة"></i>
+        </div>
+
+        <!-- FAQ Section for additional SEO keywords -->
+        <div class="faq">
+            <h2>الأسئلة الشائعة</h2>
+            <div class="faq-item">
+                <h4>ما هي ميزات الاستضافة المجانية التي تقدمونها؟</h4>
+                <p>نوفر استضافة مجانية بمواصفات عالية: مساحة تخزين 10 جيجابايت، نقل بيانات غير محدود، لوحة تحكم cPanel، دعم PHP وMySQL، تركيب ووردبريس بنقرة واحدة، بريد إلكتروني مجاني، وحماية SSL شاملة. الدعم الفني متاح باللغة العربية على مدار الساعة.</p>
             </div>
-            <p style="font-size: 0.75rem; color: var(--accent);"><i class="fa-brands fa-tron"></i> شبكة TRC20 حصراً - تأكد قبل التحويل</p>
+            <div class="faq-item">
+                <h4>كيف أختار دومين نطاق مميز لموقعي؟</h4>
+                <p>الدومين المميز يجب أن يكون قصيرًا، سهل التذكر، ويعكس مجال نشاطك. ننصح باختيار أسماء تحتوي على كلمات مفتاحية ذات صلة بخدمتك. نوفر استشارة مجانية لاختيار أفضل نطاق، بالإضافة إلى توفير نطاقات .com و .xyz بأسعار تبدأ من 15 دينارًا ليبيًا سنويًا فقط.</p>
+            </div>
+            <div class="faq-item">
+                <h4>ما الذي يتضمنه الموقع الجاهز المتكامل؟</h4>
+                <p>الموقع الجاهز يشمل تصميم احترافي متجاوب مع الجوال، 5 صفحات رئيسية (الرئيسية، من نحن، الخدمات، اتصل بنا، المدونة)، نظام إدارة محتوى لسهولة التعديل، إعدادات SEO كاملة، ربط بخرائط جوجل وأزرار التواصل الاجتماعي، نموذج تواصل يرسل للإيميل، وسرعة تحميل ممتازة. التكلفة تشمل التصميم والبرمجة والتسليم خلال 48 ساعة.</p>
+            </div>
+            <div class="faq-item">
+                <h4>هل تقدمون خدمات تصميم مواقع في ليبيا؟</h4>
+                <p>نعم، techllms.xyz هي شركة ليبية متخصصة في خدمات الويب، نقدم حلولاً متكاملة للعملاء في جميع المدن الليبية: طرابلس، بنغازي، مصراتة، الزاوية، وغيرها. تفهمنا لاحتياجات السوق المحلي يمكننا من تقديم أفضل جودة بأقل تكلفة.</p>
+            </div>
         </div>
-    </section>
 
-    <section class="services-grid">
-        <div class="service-card">
-            <i class="fa-solid fa-phone-laptop"></i>
-            <h3>1. اطلب الحساب</h3>
-            <p>حدد الكمية وتواصل معنا عبر الواتساب لاستلام رقم الحساب البنكي.</p>
+        <!-- Contact CTA -->
+        <div class="contact">
+            <h2>جاهز لبدء مشروعك؟</h2>
+            <p>اطلب الآن استضافة مجانية، دومين مميز، أو موقع جاهز بالكامل</p>
+            <div class="phone">+218 91-7021437</div>
+            <p class="note">متاحون للرد على استفساراتكم عبر الواتساب على مدار اليوم</p>
+            <a href="https://wa.me/218917021437" class="whatsapp-btn" style="margin-top:20px; display:inline-block;" target="_blank" rel="noopener noreferrer">💬 راسلنا على واتساب</a>
         </div>
-        <div class="service-card">
-            <i class="fa-solid fa-camera"></i>
-            <h3>2. حوّل وصوّر</h3>
-            <p>قم بالتحويل وأرسل لقطة شاشة واضحة عبر الواتساب للتحقق.</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 <a href="https://techllms.xyz">techllms.xyz</a>. جميع الحقوق محفوظة. | استضافة مجانية، دومين مميز، مواقع جاهزة في ليبيا.</p>
+            <p>techllms.xyz - بوابتك إلى العالم الرقمي بأقل التكاليف وأعلى جودة.</p>
         </div>
-        <div class="service-card">
-            <i class="fa-solid fa-coins"></i>
-            <h3>3. استلم فوراً</h3>
-            <p>بعد التأكيد، يتم إرسال USDT إلى محفظتك من المخزن البارد.</p>
-        </div>
-    </section>
-</main>
+    </footer>
 
-<footer>
-    <p>&copy; 2026 مؤسسة TechLLMs للحلول الرقمية - طرابلس، ليبيا</p>
-    <p style="margin-top: 12px; font-size: 0.75rem;">نضمن أمان تعاملاتك عبر التدقيق اليدوي لكل عملية تحويل.</p>
-</footer>
-
-<div id="toastMessage" class="toast-msg"></div>
-
-<script>
-    (function() {
-        // ---------- Configuration ----------
-        const EXCHANGE_RATE = 7.90;      // 1 USDT = 7.90 LYD
-        const WHATSAPP_NUMBER = "218917021437";
-        const WALLET_ADDRESS = "TSvW4XVmvY8cyvZdu3yFcbZyMsMW3dYYu8";
-        
-        // DOM Elements
-        const usdtInput = document.getElementById('usdtAmount');
-        const lydInput = document.getElementById('lydAmount');
-        const rateSpan = document.getElementById('rateValue');
-        const requestBtn = document.getElementById('requestOrderBtn');
-        const copyWalletBtn = document.getElementById('copyWalletBtn');
-        const walletSpan = document.getElementById('walletAddress');
-        const toastEl = document.getElementById('toastMessage');
-
-        // Helper: Show temporary message
-        function showMessage(text, isError = false) {
-            toastEl.textContent = text;
-            toastEl.style.backgroundColor = isError ? '#7f1a1a' : '#0f172a';
-            toastEl.style.borderRightColor = isError ? '#ef4444' : '#10b981';
-            toastEl.style.opacity = '1';
-            setTimeout(() => {
-                toastEl.style.opacity = '0';
-            }, 2800);
-        }
-
-        // Format number to 2 decimals without trailing .00 if integer
-        function formatNumber(value) {
-            let num = parseFloat(value);
-            if (isNaN(num)) return '';
-            return num % 1 === 0 ? num.toString() : num.toFixed(2);
-        }
-
-        // Update LYD based on USDT
-        function updateFromUSDT() {
-            let usdtVal = parseFloat(usdtInput.value);
-            if (isNaN(usdtVal) || usdtVal < 0) {
-                lydInput.value = '';
-                return;
-            }
-            let lydVal = usdtVal * EXCHANGE_RATE;
-            lydInput.value = formatNumber(lydVal);
-        }
-
-        // Update USDT based on LYD
-        function updateFromLYD() {
-            let lydVal = parseFloat(lydInput.value);
-            if (isNaN(lydVal) || lydVal < 0) {
-                usdtInput.value = '';
-                return;
-            }
-            let usdtVal = lydVal / EXCHANGE_RATE;
-            usdtInput.value = formatNumber(usdtVal);
-        }
-
-        // Event handlers with circular prevention
-        let isUpdating = false;
-        function handleUSDTChange() {
-            if (isUpdating) return;
-            isUpdating = true;
-            updateFromUSDT();
-            isUpdating = false;
-        }
-        
-        function handleLYDChange() {
-            if (isUpdating) return;
-            isUpdating = true;
-            updateFromLYD();
-            isUpdating = false;
-        }
-
-        // Validate inputs (prevent negative and non-numeric)
-        function sanitizeNumberInput(e) {
-            let input = e.target;
-            let value = input.value;
-            if (value === '') return;
-            let num = parseFloat(value);
-            if (isNaN(num)) {
-                input.value = '';
-            } else if (num < 0) {
-                input.value = 0;
-                if (input.id === 'usdtAmount') handleUSDTChange();
-                else handleLYDChange();
-            } else {
-                // allow, but we keep formatting later
-            }
-        }
-
-        // Request order via WhatsApp
-        function requestOrder() {
-            let usdtValue = usdtInput.value;
-            let lydValue = lydInput.value;
-            
-            if (!usdtValue || parseFloat(usdtValue) <= 0) {
-                showMessage('⚠️ الرجاء إدخال كمية صالحة من USDT (أكبر من 0)', true);
-                usdtInput.focus();
-                return;
-            }
-            
-            let usdtNum = parseFloat(usdtValue);
-            let lydNum = parseFloat(lydValue);
-            if (isNaN(lydNum) || lydNum <= 0) {
-                showMessage('⚠️ المبلغ بالدينار غير صحيح، تأكد من الحساب', true);
-                return;
-            }
-            
-            const message = `مرحباً TechLLMs،
-أرغب في شراء ${usdtNum} USDT مقابل ${lydNum} دينار ليبي.
-سعر الصرف: ${EXCHANGE_RATE} LYD لكل USDT.
-الرجاء تزويدي برقم الحساب المصرفي لإتمام التحويل.`;
-            
-            const encodedMsg = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`;
-            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-            showMessage('📱 جاري توجيهك إلى واتساب...');
-        }
-
-        // Copy wallet address with modern clipboard API
-        async function copyWalletAddress() {
-            const address = walletSpan.innerText;
-            if (!address) return;
-            
-            try {
-                await navigator.clipboard.writeText(address);
-                showMessage('✅ تم نسخ عنوان المحفظة بنجاح!');
-            } catch (err) {
-                // Fallback for older browsers
-                const textarea = document.createElement('textarea');
-                textarea.value = address;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showMessage('✅ تم نسخ العنوان (طريقة احتياطية)');
-            }
-        }
-
-        // Initialize event listeners
-        function init() {
-            // Set rate text
-            if (rateSpan) rateSpan.innerText = EXCHANGE_RATE;
-            // Set initial wallet
-            if (walletSpan) walletSpan.innerText = WALLET_ADDRESS;
-            
-            // Add listeners
-            if (usdtInput) {
-                usdtInput.addEventListener('input', handleUSDTChange);
-                usdtInput.addEventListener('blur', sanitizeNumberInput);
-            }
-            if (lydInput) {
-                lydInput.addEventListener('input', handleLYDChange);
-                lydInput.addEventListener('blur', sanitizeNumberInput);
-            }
-            if (requestBtn) requestBtn.addEventListener('click', requestOrder);
-            if (copyWalletBtn) copyWalletBtn.addEventListener('click', copyWalletAddress);
-            
-            // Set default values
-            if (usdtInput) {
-                usdtInput.value = "100";
-                handleUSDTChange();
-            }
-        }
-        
-        // Start when DOM ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', init);
-        } else {
-            init();
-        }
-    })();
-</script>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/218917021437" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب">
+        <span style="line-height:1;">💬</span>
+    </a>
 </body>
 </html>

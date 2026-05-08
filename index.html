@@ -119,6 +119,31 @@
             box-shadow: 0 14px 24px rgba(18, 140, 126, 0.4);
         }
 
+        /* زر واتساب صغير داخل البطاقات */
+        .whatsapp-card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 14px rgba(37, 211, 102, 0.3);
+            margin-top: 12px;
+            align-self: flex-start;
+            gap: 6px;
+        }
+
+        .whatsapp-card-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(18, 140, 126, 0.4);
+        }
+
         /* Services Cards */
         .services {
             display: flex;
@@ -176,7 +201,7 @@
             font-size: 0.9rem;
             line-height: 1.9;
             text-align: justify;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             flex-grow: 1;
         }
 
@@ -189,7 +214,7 @@
             font-size: 0.8rem;
             font-weight: 600;
             align-self: flex-start;
-            margin-top: auto;
+            margin-top: 8px;
             letter-spacing: 0.3px;
         }
 
@@ -249,7 +274,7 @@
             font-size: 0.88rem;
         }
 
-        /* Contact Section */
+        /* Contact CTA في الوسط */
         .contact {
             text-align: center;
             background: linear-gradient(150deg, #1e3a8a, #0f172a);
@@ -285,10 +310,81 @@
             backdrop-filter: blur(10px);
         }
 
-        .contact .note {
-            font-size: 0.85rem;
-            opacity: 0.8;
+        /* أقسام أسفل الموقع (من نحن، سياساتنا، اتصل بنا) */
+        .bottom-sections {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-block {
+            background: white;
+            border-radius: 24px;
+            padding: 25px 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .info-block h2 {
+            font-size: 1.4rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .info-block p,
+        .info-block ul {
+            color: #475569;
+            font-size: 0.9rem;
+            line-height: 1.9;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .info-block ul {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .info-block ul li {
             margin-bottom: 10px;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .info-block ul li::before {
+            content: "✅";
+            font-size: 0.9rem;
+        }
+
+        /* صندوق الإيميل */
+        .email-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #f1f5f9;
+            padding: 12px 18px;
+            border-radius: 50px;
+            margin: 10px 0;
+            direction: ltr;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1e293b;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .email-box:hover {
+            background: #e2e8f0;
+        }
+
+        .email-icon {
+            font-size: 1.3rem;
         }
 
         /* Floating WhatsApp */
@@ -345,6 +441,10 @@
                 font-size: 1.2rem;
                 padding: 8px 16px;
             }
+            .whatsapp-card-btn {
+                font-size: 0.8rem;
+                padding: 8px 15px;
+            }
         }
     </style>
 
@@ -358,6 +458,7 @@
         "logo": "https://techllms.xyz/tech-1.jpg",
         "description": "خدمات استضافة مجانية، دومين نطاق مميز، ومواقع جاهزة متكاملة بأقل تكلفة في ليبيا.",
         "telephone": "+218917021437",
+        "email": "nosa6512@gmail.com",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "ليبيا"
@@ -368,6 +469,7 @@
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+218917021437",
+            "email": "nosa6512@gmail.com",
             "contactType": "customer service",
             "availableLanguage": ["Arabic"]
         }
@@ -399,6 +501,7 @@
                     <h3>احصل على استضافة مجانية</h3>
                     <p>ابدأ موقعك دون دفع أي مليم. نوفر لك <strong>استضافة مجانية</strong> تمامًا بمساحة تخزين سخية، نقل بيانات غير محدود، وشهادة SSL مجانية. مثالية للمبتدئين والمدونات والمشاريع الصغيرة. دعم فني سريع على مدار الساعة.</p>
                     <span class="tag">#استضافة_مجانية</span>
+                    <a href="https://wa.me/218917021437?text=مرحباً، أريد الاستفسار عن الاستضافة المجانية" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer">💬 راسلنا للاستضافة</a>
                 </div>
             </div>
 
@@ -409,6 +512,7 @@
                     <h3>احصل على دومين نطاق مميز</h3>
                     <p>اختر اسم نطاق يعكس هويتك ويسهل تذكره. نوفر <strong>دومين نطاق مميز</strong> بأسعار تنافسية: <strong>.com</strong> و <strong>.net</strong> و <strong>.xyz</strong> مع حماية خصوصية مجانية. استثمر في عنوان موقعك لبناء ثقة زوارك وتحسين ظهورك.</p>
                     <span class="tag">#دومين_مميز</span>
+                    <a href="https://wa.me/218917021437?text=مرحباً، أريد حجز دومين مميز" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer">💬 راسلنا للدومين</a>
                 </div>
             </div>
 
@@ -419,6 +523,7 @@
                     <h3>موقع جاهز متكامل بتكلفة منخفضة جدًا</h3>
                     <p>لا حاجة للبرمجة أو التصميم المكلف. نقدم لك <strong>موقع ويب جاهز متكامل</strong> بأقل الأسعار، متوافق مع جميع الأجهزة ومحسّن لمحركات البحث. يشمل نظام إدارة محتوى ونماذج تواصل. مثالي للأنشطة التجارية والخدمات.</p>
                     <span class="tag">#موقع_جاهز</span>
+                    <a href="https://wa.me/218917021437?text=مرحباً، أريد موقعاً جاهزاً متكاملاً" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer">💬 راسلنا للموقع الجاهز</a>
                 </div>
             </div>
         </div>
@@ -444,7 +549,7 @@
             </div>
         </div>
 
-        <!-- Contact CTA -->
+        <!-- Contact CTA وسط الصفحة -->
         <div class="contact">
             <h2>جاهز لبدء مشروعك؟</h2>
             <p>اطلب الآن استضافة مجانية، دومين مميز، أو موقع جاهز</p>
@@ -452,11 +557,47 @@
             <p class="note">متاحون للرد على استفساراتكم عبر الواتساب طوال اليوم</p>
             <a href="https://wa.me/218917021437" class="whatsapp-btn" style="margin-top:12px; display:inline-block;" target="_blank" rel="noopener noreferrer">💬 راسلنا على واتساب</a>
         </div>
+
+        <!-- الأقسام الثلاثة الجديدة أسفل الموقع -->
+        <div class="bottom-sections">
+            <!-- من نحن -->
+            <div class="info-block" id="about">
+                <h2>📌 من نحن</h2>
+                <p>فريق <strong>techllms.xyz</strong> متخصص في خدمات الويب المتكاملة داخل ليبيا. هدفنا تمكين الأفراد والشركات الصغيرة من التواجد الرقمي القوي بأقل التكاليف. نؤمن بأن الاحترافية والجودة العالية يجب أن تكون في متناول الجميع، لذلك نقدم استضافة مجانية، نطاقات مميزة، ومواقع جاهزة بتصاميم عصرية ومرونة كاملة.</p>
+                <p>نفخر بخدمة عملاء من مختلف المدن الليبية، ونسعى دائماً لكسب ثقتكم من خلال الدعم الفوري والصادق.</p>
+            </div>
+
+            <!-- سياساتنا -->
+            <div class="info-block" id="privacy">
+                <h2>🔒 سياساتنا</h2>
+                <p><strong>سياسة الخصوصية:</strong> نحن نلتزم بحماية بيانات عملائنا ولا نشاركها مع أي طرف ثالث. المعلومات التي يتم جمعها تستخدم فقط لتقديم خدماتنا وتحسين تجربتك.</p>
+                <p><strong>سياسة الاستخدام:</strong> نحرص على توفير بيئة آمنة ومستقرة. يُمنع استخدام خدماتنا لأي أنشطة غير قانونية أو مضرة. نحتفظ بالحق في تعليق أي خدمة تثبت مخالفتها للشروط.</p>
+                <p><strong>الإلغاء والاسترداد:</strong> يمكنك إلغاء الخدمات المدفوعة خلال 7 أيام لاسترداد كامل المبلغ. الخدمات المجانية تبقى مجانية دون أي التزام.</p>
+            </div>
+
+            <!-- اتصل بنا -->
+            <div class="info-block" id="contact-us">
+                <h2>📞 اتصل بنا</h2>
+                <p>نحن هنا للإجابة عن استفساراتكم ومساعدتكم في اختيار الخدمة الأنسب. يمكنكم التواصل معنا عبر إحدى الطرق التالية:</p>
+                <ul>
+                    <li><strong>📱 واتساب:</strong> <a href="https://wa.me/218917021437" target="_blank" rel="noopener noreferrer">+218 91-7021437</a></li>
+                    <li>
+                        <strong>📧 البريد الإلكتروني:</strong>
+                        <a href="mailto:nosa6512@gmail.com" class="email-box">
+                            <span class="email-icon">✉️</span> nosa6512@gmail.com
+                        </a>
+                    </li>
+                    <li><strong>🌐 الموقع:</strong> techllms.xyz</li>
+                </ul>
+                <a href="https://wa.me/218917021437" class="whatsapp-btn" style="display:inline-flex; align-items:center; gap:6px; margin-top:10px;" target="_blank" rel="noopener noreferrer">💬 تواصل فوري</a>
+            </div>
+        </div>
     </div>
 
     <footer>
         <div class="container">
             <p>© 2026 <a href="https://techllms.xyz">techllms.xyz</a> - جميع الحقوق محفوظة.</p>
+            <p>📧 <a href="mailto:nosa6512@gmail.com">nosa6512@gmail.com</a> | 📞 +218 91-7021437</p>
             <p>استضافة مجانية، دومين مميز، مواقع جاهزة في ليبيا بأقل التكاليف وأعلى جودة.</p>
         </div>
     </footer>

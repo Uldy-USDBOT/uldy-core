@@ -26,6 +26,11 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -49,28 +54,250 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            background:
+                radial-gradient(ellipse 80% 120% at 50% -20%, rgba(30,58,138,0.55) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 80% at 0% 100%, rgba(37,211,102,0.06) 0%, transparent 60%),
+                linear-gradient(180deg, #07101f 0%, #0b1a35 60%, #081428 100%);
             color: white;
-            padding: 25px 15px;
+            padding: 0;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border-bottom: 3px solid #25D366;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+            border-bottom: none;
+            position: relative;
+            overflow: visible;
         }
 
-        header .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            word-break: break-word;
-            line-height: 1.3;
+        /* نقاط زخرفية شبكية */
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+            z-index: 0;
+            clip-path: inset(0);
         }
 
-        header .tagline {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            margin-top: 8px;
+        /* خط توهج علوي */
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(37,211,102,0.6) 30%, rgba(99,179,237,0.6) 70%, transparent 100%);
+        }
+
+        /* الشريط الداخلي للشعار */
+        .header-brand-bar {
+            padding: 20px 60px 16px 15px;
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* صف الشعار الرئيسي */
+        .brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        /* أيقونة الشعار */
+        .brand-icon {
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px rgba(37,211,102,0.45));
+        }
+
+        /* كتلة النص */
+        .brand-text-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1px;
+        }
+
+        .logo {
+            font-family: 'Tajawal', 'Segoe UI', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            line-height: 1.1;
+            background: linear-gradient(120deg, #e8f4ff 0%, #c8e8ff 35%, #7dd9a8 70%, #25D366 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 1px 6px rgba(37,211,102,0.25));
+        }
+
+        .logo-sub {
+            font-family: 'Tajawal', 'Segoe UI', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(147,197,253,0.65);
+            line-height: 1;
+        }
+
+        /* فاصل أفقي */
+        .header-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(37,211,102,0.2) 50%, rgba(255,255,255,0.08) 70%, transparent);
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* شريط الشعار الفرعي السفلي */
+        .header-tagline-bar {
+            padding: 9px 15px 14px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tagline-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #25D366;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+
+        .tagline {
+            font-family: 'Tajawal', 'Segoe UI', sans-serif;
+            font-size: 0.82rem;
+            color: rgba(186, 210, 255, 0.7);
             font-weight: 300;
+            letter-spacing: 0.3px;
         }
+
+        /* خط أخضر سفلي */
+        .header-bottom-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #1a8a4a 20%, #25D366 50%, #1a8a4a 80%, transparent);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* القائمة المنبثقة */
+        .header-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(37,211,102,0.4);
+            border-radius: 12px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+            z-index: 200;
+            padding: 0;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+
+        .menu-btn:hover {
+            background: rgba(37,211,102,0.15);
+            border-color: rgba(37,211,102,0.7);
+            box-shadow: 0 4px 20px rgba(37,211,102,0.2);
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.35s ease;
+            transform-origin: center;
+        }
+
+        .menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .nav-dropdown {
+            position: fixed;
+            top: auto;
+            right: 15px;
+            background: linear-gradient(160deg, #0f172a, #1a2e6e);
+            border: 1px solid rgba(37,211,102,0.3);
+            border-radius: 16px;
+            min-width: 210px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            z-index: 9999;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: opacity 0.28s ease, transform 0.28s ease;
+        }
+
+        .nav-dropdown.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .nav-dropdown a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(37,211,102,0.2);
+            touch-action: manipulation;
+        }
+
+        .nav-dropdown a:last-child { border-bottom: none; }
+
+        .nav-dropdown a:hover,
+        .nav-dropdown a:active {
+            background: rgba(37,211,102,0.15);
+            color: #25D366;
+        }
+
+        .nav-dropdown a .nav-icon { font-size: 1rem; width: 22px; text-align: center; }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9990;
+            background: transparent;
+        }
+        .menu-overlay.active { display: block; }
 
         /* Hero */
         .hero {
@@ -533,11 +760,122 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">techllms.xyz</div>
-            <div class="tagline">الحل الأمثل لوجودك الرقمي بأقل التكاليف</div>
+        <!-- شريط الشعار الرئيسي -->
+        <div class="header-brand-bar">
+            <div class="header-inner">
+                <div class="brand-row">
+                    <!-- أيقونة الشعار SVG -->
+                    <svg class="brand-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="23" cy="23" r="22" stroke="url(#iconGrad)" stroke-width="1.5" fill="rgba(37,211,102,0.06)"/>
+                        <path d="M12 23 Q23 10 34 23 Q23 36 12 23Z" fill="url(#iconGrad)" opacity="0.85"/>
+                        <circle cx="23" cy="23" r="5" fill="white" opacity="0.95"/>
+                        <circle cx="23" cy="23" r="2.5" fill="url(#iconGrad)"/>
+                        <defs>
+                            <linearGradient id="iconGrad" x1="0" y1="0" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#63b3ed"/>
+                                <stop offset="100%" stop-color="#25D366"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="brand-text-block">
+                        <div class="logo">techllms.xyz</div>
+                        <div class="logo-sub">Web &nbsp;·&nbsp; Tech &nbsp;·&nbsp; Libya</div>
+                    </div>
+                </div>
+                <!-- زر القائمة -->
+                <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- القائمة المنبثقة -->
+                <nav class="nav-dropdown" id="navDropdown">
+                    <a href="#hosting"><span class="nav-icon">🌐</span> استضافة مجانية</a>
+                    <a href="#domain"><span class="nav-icon">🔑</span> دومين مميز</a>
+                    <a href="#website"><span class="nav-icon">💻</span> موقع جاهز متكامل</a>
+                    <a href="#about"><span class="nav-icon">📌</span> من نحن</a>
+                    <a href="#policy"><span class="nav-icon">🔒</span> سياساتنا</a>
+                    <a href="#contact"><span class="nav-icon">📞</span> اتصل بنا</a>
+                </nav>
+            </div>
         </div>
+
+        <!-- فاصل -->
+        <div class="header-divider"></div>
+
+        <!-- شريط الشعار الفرعي -->
+        <div class="header-tagline-bar">
+            <div class="tagline-dot"></div>
+            <div class="tagline">الحل الأمثل لوجودك الرقمي في ليبيا بأقل التكاليف وأعلى جودة</div>
+            <div class="tagline-dot"></div>
+        </div>
+
+        <!-- خط أخضر سفلي -->
+        <div class="header-bottom-line"></div>
     </header>
+
+    <!-- طبقة إغلاق القائمة عند الضغط خارجها -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <script>
+        (function() {
+            var btn     = document.getElementById('menuBtn');
+            var nav     = document.getElementById('navDropdown');
+            var overlay = document.getElementById('menuOverlay');
+
+            function positionDropdown() {
+                var r = btn.getBoundingClientRect();
+                nav.style.top   = (r.bottom + 6) + 'px';
+                nav.style.right = (window.innerWidth - r.right) + 'px';
+                nav.style.left  = 'auto';
+            }
+
+            function openMenu() {
+                positionDropdown();
+                btn.classList.add('open');
+                nav.classList.add('open');
+                overlay.classList.add('active');
+            }
+            function closeMenu() {
+                btn.classList.remove('open');
+                nav.classList.remove('open');
+                overlay.classList.remove('active');
+            }
+            function isOpen() { return nav.classList.contains('open'); }
+
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                isOpen() ? closeMenu() : openMenu();
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            /* روابط القائمة */
+            var links = nav.querySelectorAll('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var id = this.getAttribute('href').replace('#', '');
+                    closeMenu();
+                    setTimeout(function() {
+                        var target = document.getElementById(id);
+                        if (target) {
+                            var top = target.getBoundingClientRect().top + window.pageYOffset - 12;
+                            window.scrollTo({ top: top, behavior: 'smooth' });
+                        }
+                    }, 280);
+                });
+            }
+
+            /* إغلاق عند الضغط خارج القائمة */
+            document.addEventListener('click', function(e) {
+                if (isOpen() && !nav.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
 
     <!-- Hero مع صورة خلفية -->
     <section class="hero">
@@ -552,7 +890,7 @@
     <div class="container">
         <div class="services">
             <!-- Card 1: استضافة مجانية -->
-            <div class="card">
+            <div class="card" id="hosting">
                 <img src="tech-01.jpg" alt="استضافة مجانية غير محدودة - techllms.xyz" loading="lazy">
                 <div class="card-content">
                     <h3>احصل على استضافة مجانية</h3>
@@ -563,7 +901,7 @@
             </div>
 
             <!-- Card 2: دومين نطاق مميز -->
-            <div class="card">
+            <div class="card" id="domain">
                 <img src="tech-2.jpg" alt="دومين نطاق مميز .com .xyz - techllms.xyz" loading="lazy">
                 <div class="card-content">
                     <h3>احصل على دومين نطاق مميز</h3>
@@ -574,7 +912,7 @@
             </div>
 
             <!-- Card 3: موقع جاهز متكامل -->
-            <div class="card">
+            <div class="card" id="website">
                 <img src="tech-3.jpg" alt="موقع جاهز متكامل بتكلفة منخفضة جدًا - techllms.xyz" loading="lazy">
                 <div class="card-content">
                     <h3>موقع جاهز متكامل بتكلفة منخفضة جدًا</h3>
@@ -618,14 +956,14 @@
         <!-- الأقسام الثلاثة الجديدة أسفل الموقع -->
         <div class="bottom-sections">
             <!-- من نحن -->
-            <div class="info-block">
+            <div class="info-block" id="about">
                 <h2>📌 من نحن</h2>
                 <p>فريق <strong>techllms.xyz</strong> متخصص في خدمات الويب المتكاملة داخل ليبيا. هدفنا تمكين الأفراد والشركات الصغيرة من التواجد الرقمي القوي بأقل التكاليف. نؤمن بأن الاحترافية والجودة العالية يجب أن تكون في متناول الجميع، لذلك نقدم استضافة مجانية، نطاقات مميزة، ومواقع جاهزة بتصاميم عصرية ومرونة كاملة.</p>
                 <p>نفخر بخدمة عملاء من مختلف المدن الليبية، ونسعى دائماً لكسب ثقتكم من خلال الدعم الفوري والصادق.</p>
             </div>
 
             <!-- سياساتنا -->
-            <div class="info-block">
+            <div class="info-block" id="policy">
                 <h2>🔒 سياساتنا</h2>
                 <p><strong>سياسة الخصوصية:</strong> نحن نلتزم بحماية بيانات عملائنا ولا نشاركها مع أي طرف ثالث. المعلومات التي يتم جمعها تستخدم فقط لتقديم خدماتنا وتحسين تجربتك.</p>
                 <p><strong>سياسة الاستخدام:</strong> نحرص على توفير بيئة آمنة ومستقرة. يُمنع استخدام خدماتنا لأي أنشطة غير قانونية أو مضرة. نحتفظ بالحق في تعليق أي خدمة تثبت مخالفتها للشروط.</p>
@@ -633,7 +971,7 @@
             </div>
 
             <!-- اتصل بنا (المظهر المحسّن) -->
-            <div class="info-block">
+            <div class="info-block" id="contact">
                 <h2>📞 اتصل بنا</h2>
                 <p style="margin-bottom: 5px;">نحن هنا للإجابة عن استفساراتكم ومساعدتكم في اختيار الخدمة الأنسب. يمكنكم التواصل معنا عبر:</p>
                 <ul class="contact-info-list">

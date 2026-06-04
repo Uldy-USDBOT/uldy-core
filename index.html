@@ -29,9 +29,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
+        /* ========== إعدادات عامة ========== */
         * {
             margin: 0;
             padding: 0;
@@ -39,7 +40,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* تحسين أساسي: استخدام خط عربي واضح ومريح للقراءة */
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             background-color: #f4f6f9;
             color: #1f2937;
@@ -52,7 +54,7 @@
             padding: 15px;
         }
 
-        /* Header */
+        /* ========== الهيدر والشريط العلوي ========== */
         header {
             background:
                 radial-gradient(ellipse 80% 120% at 50% -20%, rgba(30,58,138,0.55) 0%, transparent 70%),
@@ -64,7 +66,7 @@
             box-shadow: 0 8px 40px rgba(0,0,0,0.5);
             border-bottom: none;
             position: relative;
-            overflow: visible;
+            overflow: visible; /* ضروري لظهور القائمة المنسدلة */
         }
 
         /* نقاط زخرفية شبكية */
@@ -76,7 +78,6 @@
             background-size: 28px 28px;
             pointer-events: none;
             z-index: 0;
-            clip-path: inset(0);
         }
 
         /* خط توهج علوي */
@@ -90,14 +91,22 @@
 
         /* الشريط الداخلي للشعار */
         .header-brand-bar {
-            padding: 20px 60px 16px 15px;
+            padding: 20px 15px 16px 15px;
             position: relative;
             z-index: 1;
             max-width: 500px;
             margin: 0 auto;
         }
 
-        /* صف الشعار الرئيسي */
+        /* صف الشعار الرئيسي - أصبح position: relative ليحتوي القائمة */
+        .header-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* صف الشعار */
         .brand-row {
             display: flex;
             align-items: center;
@@ -178,7 +187,7 @@
         .tagline {
             font-family: 'Tajawal', 'Segoe UI', sans-serif;
             font-size: 0.82rem;
-            color: rgba(186, 210, 255, 0.7);
+            color: rgba(186, 210, 255, 0.75);
             font-weight: 300;
             letter-spacing: 0.3px;
         }
@@ -191,17 +200,10 @@
             z-index: 1;
         }
 
-        /* القائمة المنبثقة */
-        .header-inner {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
+        /* ========== زر القائمة ========== */
         .menu-btn {
             position: absolute;
-            right: 0;
+            left: 0; /* تغيير من right إلى left ليناسب RTL */
             top: 50%;
             transform: translateY(-50%);
             background: rgba(255,255,255,0.06);
@@ -220,6 +222,8 @@
             padding: 0;
             backdrop-filter: blur(6px);
             box-shadow: 0 2px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+            /* تحسين للمس */
+            -webkit-tap-highlight-color: transparent;
         }
 
         .menu-btn:hover {
@@ -242,10 +246,11 @@
         .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
         .menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+        /* ========== القائمة المنسدلة (تم التعديل) ========== */
         .nav-dropdown {
-            position: fixed;
-            top: auto;
-            right: 15px;
+            position: absolute; /* مهم: أصبحت تابعة للحاوية header-inner */
+            top: calc(100% + 8px); /* تظهر أسفل الزر بمسافة بسيطة */
+            left: 0; /* محاذاة لليسار في RTL */
             background: linear-gradient(160deg, #0f172a, #1a2e6e);
             border: 1px solid rgba(37,211,102,0.3);
             border-radius: 16px;
@@ -278,6 +283,7 @@
             cursor: pointer;
             -webkit-tap-highlight-color: rgba(37,211,102,0.2);
             touch-action: manipulation;
+            transition: background 0.2s, color 0.2s;
         }
 
         .nav-dropdown a:last-child { border-bottom: none; }
@@ -290,6 +296,7 @@
 
         .nav-dropdown a .nav-icon { font-size: 1rem; width: 22px; text-align: center; }
 
+        /* طبقة الإغلاق عند الضغط خارج القائمة */
         .menu-overlay {
             display: none;
             position: fixed;
@@ -299,7 +306,7 @@
         }
         .menu-overlay.active { display: block; }
 
-        /* Hero */
+        /* ========== قسم الترحيب (Hero) ========== */
         .hero {
             position: relative;
             padding: 30px 15px;
@@ -335,7 +342,7 @@
         }
 
         .hero h1 {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             color: #0f172a;
             margin-bottom: 12px;
             font-weight: 800;
@@ -343,14 +350,15 @@
         }
 
         .hero p {
-            font-size: 0.95rem;
-            color: #475569;
+            font-size: 1rem;
+            color: #334155;
             max-width: 100%;
             margin: 0 auto;
             line-height: 1.9;
             padding: 0 5px;
         }
 
+        /* ========== أزرار واتساب ========== */
         .whatsapp-btn {
             display: inline-block;
             background-color: #25D366;
@@ -373,7 +381,6 @@
             box-shadow: 0 14px 24px rgba(18, 140, 126, 0.4);
         }
 
-        /* زر واتساب صغير داخل البطاقات */
         .whatsapp-card-btn {
             display: inline-flex;
             align-items: center;
@@ -384,7 +391,7 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             box-shadow: 0 6px 14px rgba(37, 211, 102, 0.3);
             margin-top: 12px;
@@ -398,7 +405,7 @@
             box-shadow: 0 10px 20px rgba(18, 140, 126, 0.4);
         }
 
-        /* Services Cards */
+        /* ========== بطاقات الخدمات ========== */
         .services {
             display: flex;
             flex-direction: column;
@@ -443,7 +450,7 @@
         }
 
         .card-content h3 {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: #1e3a8a;
             margin-bottom: 8px;
             font-weight: 700;
@@ -451,8 +458,8 @@
         }
 
         .card-content p {
-            color: #475569;
-            font-size: 0.9rem;
+            color: #334155;
+            font-size: 0.95rem;
             line-height: 1.9;
             text-align: justify;
             margin-bottom: 10px;
@@ -472,7 +479,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* FAQ Section */
+        /* ========== الأسئلة الشائعة ========== */
         .faq {
             background: #ffffff;
             border-radius: 24px;
@@ -514,7 +521,7 @@
         }
 
         .faq-item h4 {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: #1e3a8a;
             cursor: default;
             margin-bottom: 6px;
@@ -525,10 +532,10 @@
             color: #475569;
             padding-right: 10px;
             line-height: 1.9;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
         }
 
-        /* Contact CTA وسط الصفحة */
+        /* ========== قسم التواصل وسط الصفحة ========== */
         .contact {
             text-align: center;
             background: linear-gradient(150deg, #1e3a8a, #0f172a);
@@ -546,7 +553,7 @@
         }
 
         .contact p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 10px;
             opacity: 0.9;
         }
@@ -564,7 +571,7 @@
             backdrop-filter: blur(10px);
         }
 
-        /* أقسام أسفل الموقع (من نحن، سياساتنا، اتصل بنا) */
+        /* ========== الأقسام السفلية (من نحن، سياساتنا، اتصل بنا) ========== */
         .bottom-sections {
             margin: 30px 0;
             display: flex;
@@ -591,14 +598,13 @@
         }
 
         .info-block p {
-            color: #475569;
-            font-size: 0.9rem;
+            color: #334155;
+            font-size: 0.95rem;
             line-height: 1.9;
             text-align: justify;
             margin-bottom: 15px;
         }
 
-        /* تنسيق خاص لقسم اتصل بنا ليبدو بشكل بطاقة تواصل جذابة */
         .contact-info-list {
             list-style: none;
             padding: 0;
@@ -669,7 +675,7 @@
             box-shadow: 0 12px 24px rgba(18, 140, 126, 0.4);
         }
 
-        /* Floating WhatsApp */
+        /* ========== أيقونة واتساب العائمة ========== */
         .floating-whatsapp {
             position: fixed;
             bottom: 20px;
@@ -694,14 +700,14 @@
             box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65);
         }
 
-        /* Footer */
+        /* ========== تذييل الصفحة ========== */
         footer {
             text-align: center;
             padding: 25px 15px;
             color: #64748b;
             border-top: 1px solid #e2e8f0;
             margin-top: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             line-height: 2;
         }
 
@@ -711,20 +717,20 @@
             font-weight: 600;
         }
 
-        /* تحسينات إضافية للشاشات الصغيرة جداً */
+        /* ========== تحسينات للشاشات الصغيرة ========== */
         @media (max-width: 380px) {
             .card-content h3 {
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
             .hero h1 {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
             .contact .phone {
                 font-size: 1.2rem;
                 padding: 8px 16px;
             }
             .whatsapp-card-btn {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
                 padding: 8px 15px;
             }
         }
@@ -740,7 +746,7 @@
         "logo": "https://techllms.xyz/tech-1.jpg",
         "description": "خدمات استضافة مجانية، دومين نطاق مميز، ومواقع جاهزة متكاملة بأقل تكلفة في ليبيا.",
         "telephone": "+218917021437",
-        "email": "nosa6512@gmail.com",
+        "email": "offcetech@gmail.com",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "ليبيا"
@@ -751,7 +757,7 @@
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+218917021437",
-            "email": "nosa6512@gmail.com",
+            "email": "offcetech@gmail.com",
             "contactType": "customer service",
             "availableLanguage": ["Arabic"]
         }
@@ -765,7 +771,7 @@
             <div class="header-inner">
                 <div class="brand-row">
                     <!-- أيقونة الشعار SVG -->
-                    <svg class="brand-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="brand-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <circle cx="23" cy="23" r="22" stroke="url(#iconGrad)" stroke-width="1.5" fill="rgba(37,211,102,0.06)"/>
                         <path d="M12 23 Q23 10 34 23 Q23 36 12 23Z" fill="url(#iconGrad)" opacity="0.85"/>
                         <circle cx="23" cy="23" r="5" fill="white" opacity="0.95"/>
@@ -782,20 +788,20 @@
                         <div class="logo-sub">Web &nbsp;·&nbsp; Tech &nbsp;·&nbsp; Libya</div>
                     </div>
                 </div>
-                <!-- زر القائمة -->
-                <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+                <!-- زر القائمة مع خصائص accessibility -->
+                <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navDropdown">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <!-- القائمة المنبثقة -->
-                <nav class="nav-dropdown" id="navDropdown">
-                    <a href="#hosting"><span class="nav-icon">🌐</span> استضافة مجانية</a>
-                    <a href="#domain"><span class="nav-icon">🔑</span> دومين مميز</a>
-                    <a href="#website"><span class="nav-icon">💻</span> موقع جاهز متكامل</a>
-                    <a href="#about"><span class="nav-icon">📌</span> من نحن</a>
-                    <a href="#policy"><span class="nav-icon">🔒</span> سياساتنا</a>
-                    <a href="#contact"><span class="nav-icon">📞</span> اتصل بنا</a>
+                <!-- القائمة المنسدلة -->
+                <nav class="nav-dropdown" id="navDropdown" aria-labelledby="menuBtn">
+                    <a href="#hosting" role="menuitem"><span class="nav-icon">🌐</span> استضافة مجانية</a>
+                    <a href="#domain" role="menuitem"><span class="nav-icon">🔑</span> دومين مميز</a>
+                    <a href="#website" role="menuitem"><span class="nav-icon">💻</span> موقع جاهز متكامل</a>
+                    <a href="#about" role="menuitem"><span class="nav-icon">📌</span> من نحن</a>
+                    <a href="#policy" role="menuitem"><span class="nav-icon">🔒</span> سياساتنا</a>
+                    <a href="#contact" role="menuitem"><span class="nav-icon">📞</span> اتصل بنا</a>
                 </nav>
             </div>
         </div>
@@ -819,56 +825,66 @@
 
     <script>
         (function() {
-            var btn     = document.getElementById('menuBtn');
-            var nav     = document.getElementById('navDropdown');
-            var overlay = document.getElementById('menuOverlay');
-
-            function positionDropdown() {
-                var r = btn.getBoundingClientRect();
-                nav.style.top   = (r.bottom + 6) + 'px';
-                nav.style.right = (window.innerWidth - r.right) + 'px';
-                nav.style.left  = 'auto';
-            }
+            const btn = document.getElementById('menuBtn');
+            const nav = document.getElementById('navDropdown');
+            const overlay = document.getElementById('menuOverlay');
 
             function openMenu() {
-                positionDropdown();
                 btn.classList.add('open');
                 nav.classList.add('open');
                 overlay.classList.add('active');
+                btn.setAttribute('aria-expanded', 'true');
+                // التركيز على أول عنصر في القائمة لتسهيل التنقل بلوحة المفاتيح
+                const firstLink = nav.querySelector('a');
+                if (firstLink) firstLink.focus();
             }
+
             function closeMenu() {
                 btn.classList.remove('open');
                 nav.classList.remove('open');
                 overlay.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+                btn.focus(); // إعادة التركيز للزر بعد الإغلاق
             }
-            function isOpen() { return nav.classList.contains('open'); }
 
+            function isOpen() {
+                return nav.classList.contains('open');
+            }
+
+            // فتح/إغلاق القائمة عند النقر على الزر
             btn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 isOpen() ? closeMenu() : openMenu();
             });
 
+            // إغلاق القائمة عند النقر على الطبقة الشفافة
             overlay.addEventListener('click', closeMenu);
 
-            /* روابط القائمة */
-            var links = nav.querySelectorAll('a');
-            for (var i = 0; i < links.length; i++) {
-                links[i].addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    var id = this.getAttribute('href').replace('#', '');
+            // إغلاق القائمة عند الضغط على زر ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isOpen()) {
                     closeMenu();
+                }
+            });
+
+            // التعامل مع روابط القائمة
+            const links = nav.querySelectorAll('a');
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const id = this.getAttribute('href').substring(1);
+                    closeMenu();
+                    // انتظار انتهاء أنيميشن الإغلاق ثم التمرير السلس
                     setTimeout(function() {
-                        var target = document.getElementById(id);
+                        const target = document.getElementById(id);
                         if (target) {
-                            var top = target.getBoundingClientRect().top + window.pageYOffset - 12;
-                            window.scrollTo({ top: top, behavior: 'smooth' });
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                     }, 280);
                 });
-            }
+            });
 
-            /* إغلاق عند الضغط خارج القائمة */
+            // إغلاق القائمة عند النقر خارجها
             document.addEventListener('click', function(e) {
                 if (isOpen() && !nav.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
                     closeMenu();
@@ -896,7 +912,7 @@
                     <h3>احصل على استضافة مجانية</h3>
                     <p>ابدأ موقعك دون دفع أي مليم. نوفر لك <strong>استضافة مجانية</strong> تمامًا بمساحة تخزين سخية، نقل بيانات غير محدود، وشهادة SSL مجانية. مثالية للمبتدئين والمدونات والمشاريع الصغيرة. دعم فني سريع على مدار الساعة.</p>
                     <span class="tag">#استضافة_مجانية</span>
-                    <a href="https://wa.me/218917021437?text=مرحباً، أريد الاستفسار عن الاستضافة المجانية" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer">💬 راسلنا للاستضافة</a>
+                    <a href="https://wa.me/218917021437?text=مرحباً، أريد الاستفسار عن الاستضافة المجانية" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer" aria-label="راسلنا للاستضافة عبر واتساب">💬 راسلنا للاستضافة</a>
                 </div>
             </div>
 
@@ -907,7 +923,7 @@
                     <h3>احصل على دومين نطاق مميز</h3>
                     <p>اختر اسم نطاق يعكس هويتك ويسهل تذكره. نوفر <strong>دومين نطاق مميز</strong> بأسعار تنافسية: <strong>.com</strong> و <strong>.net</strong> و <strong>.xyz</strong> مع حماية خصوصية مجانية. استثمر في عنوان موقعك لبناء ثقة زوارك وتحسين ظهورك.</p>
                     <span class="tag">#دومين_مميز</span>
-                    <a href="https://wa.me/218917021437?text=مرحباً، أريد حجز دومين مميز" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer">💬 راسلنا للدومين</a>
+                    <a href="https://wa.me/218917021437?text=مرحباً، أريد حجز دومين مميز" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer" aria-label="راسلنا للدومين عبر واتساب">💬 راسلنا للدومين</a>
                 </div>
             </div>
 
@@ -918,7 +934,7 @@
                     <h3>موقع جاهز متكامل بتكلفة منخفضة جدًا</h3>
                     <p>لا حاجة للبرمجة أو التصميم المكلف. نقدم لك <strong>موقع ويب جاهز متكامل</strong> بأقل الأسعار، متوافق مع جميع الأجهزة ومحسّن لمحركات البحث. يشمل نظام إدارة محتوى ونماذج تواصل. مثالي للأنشطة التجارية والخدمات.</p>
                     <span class="tag">#موقع_جاهز</span>
-                    <a href="https://wa.me/218917021437?text=مرحباً، أريد موقعاً جاهزاً متكاملاً" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer">💬 راسلنا للموقع الجاهز</a>
+                    <a href="https://wa.me/218917021437?text=مرحباً، أريد موقعاً جاهزاً متكاملاً" class="whatsapp-card-btn" target="_blank" rel="noopener noreferrer" aria-label="راسلنا للموقع الجاهز عبر واتساب">💬 راسلنا للموقع الجاهز</a>
                 </div>
             </div>
         </div>
@@ -953,7 +969,7 @@
             <a href="https://wa.me/218917021437" class="whatsapp-btn" style="margin-top:12px; display:inline-block;" target="_blank" rel="noopener noreferrer">💬 راسلنا على واتساب</a>
         </div>
 
-        <!-- الأقسام الثلاثة الجديدة أسفل الموقع -->
+        <!-- الأقسام الثلاثة أسفل الموقع -->
         <div class="bottom-sections">
             <!-- من نحن -->
             <div class="info-block" id="about">
@@ -976,15 +992,15 @@
                 <p style="margin-bottom: 5px;">نحن هنا للإجابة عن استفساراتكم ومساعدتكم في اختيار الخدمة الأنسب. يمكنكم التواصل معنا عبر:</p>
                 <ul class="contact-info-list">
                     <li>
-                        <span class="contact-icon">📱</span>
+                        <span class="contact-icon" aria-hidden="true">📱</span>
                         <span>واتساب: <a href="https://wa.me/218917021437" class="whatsapp-link" target="_blank" rel="noopener noreferrer">+218 91-7021437</a></span>
                     </li>
                     <li>
-                        <span class="contact-icon">✉️</span>
+                        <span class="contact-icon" aria-hidden="true">✉️</span>
                         <span>البريد الإلكتروني: <a href="mailto:offcetech@gmail.com">offcetech@gmail.com</a></span>
                     </li>
                     <li>
-                        <span class="contact-icon">🌐</span>
+                        <span class="contact-icon" aria-hidden="true">🌐</span>
                         <span>الموقع: <a href="https://techllms.xyz" target="_blank">techllms.xyz</a></span>
                     </li>
                 </ul>
